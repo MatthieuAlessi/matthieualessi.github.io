@@ -6,6 +6,11 @@ title: Home
 <!-- Posts Index
 ================================================== -->
 <h2>Portfolio</h2>
+
+
+{% include carousel.html height="45" unit="%" duration="7" %}
+
+
 <div class="blog-grid-container">
     {% for post in paginator.posts %}
         {% include postbox.html %}

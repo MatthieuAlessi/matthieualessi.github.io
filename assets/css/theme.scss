@@ -616,7 +616,7 @@ body.active-side {
 }
 @media (min-width: 1440px) {
     .container, .container-sm, .container-md, .container-lg {
-        max-width: 1200px;
+        max-width: 75%; /*1200*/
     }
 }
 @media (max-width: 1024px) {
@@ -671,7 +671,7 @@ body.active-side {
         position:relative;
     }
     .container {
-        padding-left:15px;
+        padding-left:0px;
     }
     .site-content {
         padding-top:0;
@@ -734,6 +734,11 @@ body.active-side {
 }
 
 /*   MY CSS   */
+
+.container {
+padding-left: 0px;
+padding-right: 0px;
+    }
 
 /***text-classes**/
 
@@ -801,7 +806,7 @@ color: white;
 
 @media (min-width: 1440px) {
     .header {
-        max-width: 1200px;
+        max-width: 75%; /*1200*/
     }
 }
 
