@@ -2,7 +2,7 @@
 layout: post
 title:  "One day we just started our adventure"
 author: sal
-categories: [ Travel ]
+categories: [ Travel, Lifestyle ]
 tags: [ France, test ]
 image: assets/images/15.jpg
 ---

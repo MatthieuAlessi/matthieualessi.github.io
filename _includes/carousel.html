@@ -33,7 +33,15 @@
           <ul>
             {% for post in site.tags.test %}
     
-            <li class="carousel__slide" style="background-image: url('{{ post.image }}');"><a href="{{ post.url }}">{{ post.title }}</a></li>
+            <li class="carousel__slide" style="background-image: url('{{ post.image }}');">
+            <div class="carouselcontain">
+              <div class="carouseltags-container">
+              <p class="carouseltags">{{ post.tags | first }}</p>
+              <p class="carouseltags">{{ post.tags | last }}</p>
+            </div>
+            <p class="carouseltext"><a href="{{ post.url }}">{{ post.title }}</a></p>
+          </div>
+          </li>
              
 {% endfor %}
           </ul>
@@ -49,7 +57,58 @@
 </div>
 
 <style>
+
+
+.carouselcontain {
+width: 600px;
+margin: auto;
+display: flex;
+flex-direction: column;
+flex-wrap: nowrap;
+align-content: center;
+justify-content: center;
+height: 100%;
+text-align-last: left;
+  }
+
+
+.carouseltext {
+color: white;
+font-size: 60px;
+line-height: 1.2;
+font-weight: bold;
+text-align: left;
+align-items: center;
+vertical-align: middle;
+}
+
+.carouseltext a {
+color: white;
+}
+
+.carouseltags {
+    color: white;
+    background-color: blue;
+    padding: 6px;
+    width: fit-content;
+    align-items: center;
+    vertical-align: middle;
+    display: inline-block;
+    margin-right: 5px;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
 .carousel__holder {width: 100%; position: relative; padding-bottom: {{ include.height }}{{ include.unit }}; margin: 1rem 0 1rem;}
+
+@media screen and (max-width: 1024px){
+.carousel__holder {
+    height: 500px;
+  }
+}
+
 .carousel {
   height: 100%;
   width: 100%;
@@ -170,6 +229,7 @@
   position: absolute;
   opacity: 0;
   overflow: hidden;
+  box-shadow: inset 0 0 0 1000px rgba(0,0,0,.5);
 }
 .carousel__slide .overlay {height: 100%;}
 .carousel--thumb .carousel__indicator {
@@ -223,6 +283,6 @@
       if(isVisible(elements[i])) j=i;
     }
     elements[j].click();
-  },{{ include.duration }}7000);
+  },{{ include.duration }}000);
   {% endif %}
 </script>

@@ -2,7 +2,7 @@
 layout: post
 title:  "Much more than a desert: A trip into the Sahara"
 author: john
-categories: [ Travel ]
+categories: [ Travel, Lifestyle ]
 tags: [ France, test ]
 carousel: true
 image: assets/images/16.jpg
