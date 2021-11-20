@@ -33,7 +33,7 @@
           <ul>
             {% for post in site.tags.test %}
     
-            <li class="carousel__slide" style="background-image: url('{{ post.image }}');">
+            <li class="carousel__slide" style="background-image: url('{{ site.baseurl }}/{{ post.image }}');">
             <div class="carouselcontain">
               <div class="carouseltags-container">
               <p class="carouseltags">{{ post.tags | first }}</p>
@@ -75,7 +75,7 @@ text-align-last: left;
 .carouseltext {
 color: white;
 font-size: 60px;
-line-height: 1.2;
+line-height: 1.1;
 font-weight: bold;
 text-align: left;
 align-items: center;
@@ -83,7 +83,15 @@ vertical-align: middle;
 }
 
 .carouseltext a {
+border-bottom: 0px solid transparent;
 color: white;
+}
+
+.carouseltext a:hover {
+border-bottom: 1px solid #fff;
+text-decoration: none;
+-webkit-transition: .3s;
+transition: all 0.3s;
 }
 
 .carouseltags {
@@ -96,18 +104,15 @@ color: white;
     display: inline-block;
     margin-right: 5px;
     text-transform: uppercase;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: bold;
     letter-spacing: 1px;
+    line-height: 1;
 }
 
 .carousel__holder {width: 100%; position: relative; padding-bottom: {{ include.height }}{{ include.unit }}; margin: 1rem 0 1rem;}
 
-@media screen and (max-width: 1024px){
-.carousel__holder {
-    height: 500px;
-  }
-}
+
 
 .carousel {
   height: 100%;
@@ -147,8 +152,8 @@ color: white;
 {% endfor %}
 
 .carousel__control {
-  height: 30px;
-  width: 30px;
+  height: 15px;
+  width: 15px;
   margin-top: -15px;
   top: 50%;
   position: absolute;
@@ -229,7 +234,7 @@ color: white;
   position: absolute;
   opacity: 0;
   overflow: hidden;
-  box-shadow: inset 0 0 0 1000px rgba(0,0,0,.5);
+  box-shadow: inset 0 0 0 1000px rgba(0,0,0,.4);
 }
 .carousel__slide .overlay {height: 100%;}
 .carousel--thumb .carousel__indicator {
@@ -246,6 +251,108 @@ color: white;
   background-position: center;
 }
 {% endfor %}
+
+
+/************************responsive********************/
+
+
+@media screen and (max-width: 767px) {
+
+.carousel__holder {
+    height: 400px;
+}
+
+
+.carousel__indicators {
+  display: none;
+}
+
+.carousel__control {
+  top: auto;
+  bottom: 50px;
+
+}
+
+.carousel__control--forward {
+  right: 50px;
+  left: auto;
+}
+
+
+.carousel__control--backward {
+  left: auto;
+  right: 100px;
+}
+
+.carouselcontain {
+    width: 80%;
+    height: 90%;
+
+}
+
+.carouseltext {
+    font-size: 40px; 
+}
+
+
+}
+
+
+@media screen and (max-width: 600px) {
+
+
+.carouseltext {
+    font-size: 35px; 
+}
+
+
+@media screen and (max-width: 480px) {
+
+
+.carouseltext {
+    font-size: 25px; 
+}
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px){
+
+.carousel__holder {
+    height: 400px;
+  }
+
+.carouselcontain {
+    width: 70%;
+  }
+
+.carouseltext {
+    font-size: 40px; 
+}
+}
+
+
+@media screen and (min-width: 1024px) and (max-width: 1199px) {
+
+.carouseltext {
+    font-size: 45px; 
+}
+
+}
+
+
+@media screen and (min-width: 1200px) and (max-width: 1440px) {
+
+.carouseltext {
+    font-size: 48px; 
+}
+
+}
+
+
+
+
+
+
 </style>
 
 <script>

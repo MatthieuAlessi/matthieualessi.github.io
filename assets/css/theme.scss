@@ -109,9 +109,15 @@ img, img:hover {
 		transform: translateY(0%);
 	}
 }
-.featured-image, .firstpage .blog-grid-item:nth-child(1), .firstpage .blog-grid-item:nth-child(2), .firstpage .blog-grid-item:nth-child(3) {
+
+/*ANIMATION BLOC NTH .featured-image, .firstpage .blog-grid-item:nth-child(1), .firstpage .blog-grid-item:nth-child(2), .firstpage .blog-grid-item:nth-child(3) {
     animation: fade-up 0.7s ease-out forwards running;
+}*/
+
+.featured-image, .firstpage .blog-grid-item {
+    animation: fade-up 0.5s ease-out forwards running;
 }
+
 // menu
 .navbar-brand img {
     max-height:80px;
@@ -229,16 +235,21 @@ img, img:hover {
 }
 
 
+
+
 // blog grid
+
 .blog-grid-container {
     width: auto;
     margin: 40px auto;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     grid-gap: 30px;
 }
-.blog-grid-item {  
+
+.blog-grid-item { 
+    height: 40vh; 
     color: #333;
     padding: 0;
     display: flex;
@@ -297,7 +308,7 @@ img, img:hover {
         object-position:top;
     }
 }
-.firstpage {
+/* .firstpage {
     .blog-grid-item:nth-child(1) {
         grid-column-start: 1;
         grid-column-end: 3;
@@ -334,7 +345,7 @@ img, img:hover {
         }      
     }
 }
-
+*/ 
 //pagination
 .pagination {
     justify-content:center;
@@ -853,3 +864,48 @@ body {
 
 
 }
+
+/**new block**/
+
+.cardcontainer {
+margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 80%;
+}
+
+.cardpost {
+    background-size: cover;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.4);
+    }
+
+  .firstpage .blog-grid-item:nth-child(1) {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 1;
+    grid-row-end: 1;
+}
+
+.blog-grid-item .card-title {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 1.1;
+}
+
+
+/*********responsive blocs under carousel********/
+
+@media screen and (min-width: 1024px) {
+  .blog-grid-item {
+    height: 40vh;
+}
+}
+
+@media screen and (min-width: 1200px) {
+  .blog-grid-item {
+    height: 45vh;
+}
+}
+

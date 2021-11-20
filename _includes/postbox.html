@@ -1,25 +1,32 @@
 {% assign author = site.authors[post.author] %}
 
 <div class="blog-grid-item">
-    <div class="card h-100 w-100">
-        <div class="maxthumb">
+    <div class="card cardpost h-100 w-100" style="background-image: url('{{ site.baseurl }}/{{ post.image }}');">
+        <div class="cardcontainer">
+            <div class="maxthumb">
+
+{% if post.image %}
             <a href="{{ site.baseurl }}{{ post.url }}">
-                {% if post.image %}
-
-                        <img class="img-thumb" src="{% if post.image contains "://" %}{{ post.image }}{% else %}{{ site.baseurl }}/{{ post.image }}{% endif %}" alt="{{ post.title }}"> 
-
-                {% endif %}
-            </a>
-        </div>
+ {% endif %}
+    
         <div class="card-body">
+            <div class="carouseltags-container">
+              <p class="carouseltags">{{ post.tags | first }}</p>
+              <p class="carouseltags">{{ post.tags | last }}</p>
+            </div>
             <h2 class="card-title">
-                <a class="text-dark" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+                <a class="text-white" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
                 <div class="mb-2 mt-2 font-weight-normal">
                 </div>
-                
             </h2>
             <!--h4 class="card-text">{{ post.excerpt | strip_html | truncatewords:8 }}</h4-->
         </div>
+    </div>
+                
+
+            </a>
+        </div>
+ 
                 <div class="clearfix"></div>
             </div>
         </div>
