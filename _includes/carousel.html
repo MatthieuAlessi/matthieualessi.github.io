@@ -36,10 +36,12 @@
             <li class="carousel__slide" style="background-image: url('{{ site.baseurl }}/{{ post.image }}');">
             <div class="carouselcontain">
               <div class="carouseltags-container">
+                
               <p class="carouseltags">{{ post.tags | first }}</p>
               <p class="carouseltags">{{ post.tags | last }}</p>
             </div>
-            <p class="carouseltext"><a href="{{ post.url }}">{{ post.title }}</a></p>
+            <h2 class="carouseltext"><a href="{{ post.url }}">{{ post.title }}</a></h2>
+            <p class="carouselsub text-white">{{ post.subtitle }}</p>
           </div>
           </li>
              
@@ -108,6 +110,17 @@ transition: all 0.3s;
     font-weight: bold;
     letter-spacing: 1px;
     line-height: 1;
+}
+
+
+.carouselsub {
+    font-weight: 400;
+    font-size: 12px;
+    margin-top: 0;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 5px;
+    text-align: left;
 }
 
 .carousel__holder {width: 100%; position: relative; padding-bottom: {{ include.height }}{{ include.unit }}; margin: 1rem 0 1rem;}
@@ -256,6 +269,43 @@ transition: all 0.3s;
 /************************responsive********************/
 
 
+
+
+@media screen and (max-width: 1439px) {
+
+.carouseltext {
+    font-size: 52px; 
+}
+}
+
+
+@media screen and (max-width: 1199px) {
+
+.carouseltext {
+    font-size: 43px; 
+}
+
+}
+
+
+
+@media screen and (max-width: 1023px){
+
+.carousel__holder {
+    height: 400px;
+  }
+
+.carouselcontain {
+    width: 70%;
+  }
+
+.carouseltext {
+    font-size: 40px; 
+}
+}
+
+
+
 @media screen and (max-width: 767px) {
 
 .carousel__holder {
@@ -314,40 +364,6 @@ transition: all 0.3s;
 }
 
 }
-
-@media screen and (min-width: 768px) and (max-width: 1023px){
-
-.carousel__holder {
-    height: 400px;
-  }
-
-.carouselcontain {
-    width: 70%;
-  }
-
-.carouseltext {
-    font-size: 40px; 
-}
-}
-
-
-@media screen and (min-width: 1024px) and (max-width: 1199px) {
-
-.carouseltext {
-    font-size: 45px; 
-}
-
-}
-
-
-@media screen and (min-width: 1200px) and (max-width: 1440px) {
-
-.carouseltext {
-    font-size: 48px; 
-}
-
-}
-
 
 
 

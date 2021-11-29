@@ -1,7 +1,8 @@
 ---
 layout: post
-title:  "Much more than a desert: A trip into the Sahara"
-author: john
+title:  "Much more than a desert"
+subtitle: "The Sahara is a desert located on the African continent."
+
 categories: [ Travel, Lifestyle ]
 tags: [ France, test ]
 carousel: true

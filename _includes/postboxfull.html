@@ -1,0 +1,69 @@
+<script type="text/javascript">
+  function filterUsingCategory(selectedCategory) {
+    var id = 0;
+    {% for post in site.posts %}
+      var cats = {{ post.categories | jsonify }}
+
+      var postDiv = document.getElementById(++id);
+      postDiv.style.display =
+        (selectedCategory == 'All' || cats.includes(selectedCategory)) 
+          ? 'unset' 
+          : 'none';
+    {% endfor %}
+  }
+
+  
+</script>
+
+<div class="rowcategories-filter">
+<button class="buttonfilter" id="All" onclick="filterUsingCategory('All')">
+  *Show All Posts*
+</button>
+{% assign categories = site.categories | sort %}
+{% for category in categories %}
+  {% assign cat = category | first %}
+  <button class="buttonfilter" id="{{ cat }}" onclick="filterUsingCategory(this.id)">
+    {{ cat }}
+  </button>
+{% endfor %}
+</div>
+
+<div class="bloc-grid-container-full">
+{% assign id = 0 %}
+{% for post in site.posts %}
+  {% assign id = id | plus:1 %}
+<div class="blog-grid-item blocworks" id="{{id}}">
+
+    <div class="card cardpost h-100 w-100" style="background-image: url('{% if post.image contains "://" %}{{ post.image }}{% else %}{{ site.baseurl }}/{{ post.image }}{% endif %}');">
+
+        <div class="cardcontainer">
+
+<div class="maxthumb">
+
+            <div class="carouseltagsfade">
+              <p class="carouseltags">{{ post.tags | first }}</p>
+              <p class="carouseltags">{{ post.tags | last }}</p>
+            </div>
+
+
+            <h2 class="cardtitlefull">
+                <a class="text-white" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+            </h2>
+
+            <p class="cardsub text-white">{{ post.subtitle }}</p>
+
+
+</div>
+            
+        </div>
+
+                <div class="clearfix"></div>
+        
+    </div>
+</div>
+
+ {% endfor %}
+
+
+
+

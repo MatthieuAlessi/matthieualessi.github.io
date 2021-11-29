@@ -34,9 +34,10 @@ img {
 
 h1,h2,h3,h4,h5,h6 {
     font-weight:700;
+    margin-bottom: 0;
 }
 .site-content {
-    padding-top:50px;
+    margin-top:80px;
 }
 .sitetag {
     font-weight:700;    
@@ -248,8 +249,27 @@ img, img:hover {
     grid-gap: 30px;
 }
 
+
+
+.bloc-grid-container-full {
+    width: auto;
+    margin: 60px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 30px;
+}
+
+
+@media (max-width: 768px){
+.bloc-grid-container-full {
+
+margin: 30px auto;    
+}
+}
+
 .blog-grid-item { 
-    height: 40vh; 
+    height: 300px; 
     color: #333;
     padding: 0;
     display: flex;
@@ -376,7 +396,7 @@ img, img:hover {
     h4 {
         line-height:1.3;
     }
-    margin-top:120px;   
+    /*margin-top:120px;*/   
     img.newsletter-logo {
         max-height:70px;
     } 
@@ -612,7 +632,7 @@ body.active-side {
 }
 //footer
 .footer {
-    margin-top:120px;
+    /*margin-top:120px;*/
     padding:30px;
     border-top:1px solid $gray-200;
     font-size:15px;
@@ -639,6 +659,12 @@ body.active-side {
     .blog-grid-container {
         grid-template-columns: 1fr 1fr;
     }
+
+
+    .bloc-grid-container-full {
+    grid-template-columns: 1fr 1fr;
+}
+
     .newsletter img.newsletter-logo {
         max-height: 50px;
         float: left;
@@ -651,6 +677,12 @@ body.active-side {
     .blog-grid-container {
         grid-template-columns: 1fr;
     }
+
+
+    .bloc-grid-container-full {
+        grid-template-columns: 1fr;
+    }
+
     .firstpage .blog-grid-item:nth-child(1) {
         grid-column-start: 1;
         grid-column-end: 2;
@@ -744,14 +776,19 @@ body.active-side {
     }
 }
 
-/*   MY CSS   */
+/* **********************************************  MY CSS  ********************************************************************* */
 
 .container {
 padding-left: 0px;
 padding-right: 0px;
     }
 
-/***text-classes**/
+.main-content {
+    margin-bottom: 100px;
+    padding-top: 30px;
+}    
+
+/***text-classes********************************************/
 
 .whitetext {
 color: white;
@@ -779,7 +816,7 @@ color: white;
 }
 }
 
-/**header home***/
+/*********header home**********************************/
 
 .headerwrapper {
     width: 100%;
@@ -789,7 +826,7 @@ color: white;
 
 .header {
     padding: 10% 0;
-    width: 1200px;
+    
     margin: auto;
 }
 
@@ -829,14 +866,55 @@ color: white;
     }
 }
 
-/***custom sidebar**/
+/**********custom sidebar****************************************************/
 
 .sidebar {
     height: 80px;
     width: 100%;
 }
 
-/*query sidebar menu <600px, margin-top body mobile*/
+
+/****topbar desktop****/
+
+.navigation {
+    padding: 20px 0;
+    transition: .3s ease;
+    background: red;
+    
+}
+
+.navbar {
+    padding: 0;
+}
+
+.nav-bg {
+    background-color: black;
+    padding: 7px 0px;
+}
+
+.nav-link {
+      
+      text-transform: uppercase;
+      padding: 15px;
+
+    }
+    .nav-link .active{
+      font-weight: bold;
+    }
+
+
+.navbar-dark .navbar-nav .nav-link{
+  color: white;
+  font-size: 12px;
+    letter-spacing: 1px;
+}
+
+
+
+
+
+
+/*****query sidebar menu <600px, margin-top body mobile*****/
 
 @media (max-width: 600px) {
 body {
@@ -865,7 +943,51 @@ body {
 
 }
 
-/**new block**/
+
+@media (min-width: 601px) {
+    .show-search {
+        background-color: white;
+        padding: 15px;
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 8px 17px, rgba(0, 0, 0, 0.05) 0px 2px 7px;
+
+}
+}
+
+
+/*********button home******/
+
+
+.buttonlink a {
+        background-color: transparent;
+border-color: blue;
+    color: blue;
+    padding: 8px 12px;
+    border: 2px solid;
+    width: fit-content;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    line-height: 1;
+    transition: 0.3s;
+
+}
+
+
+
+.buttonlink a:hover {
+    background-color: blue;
+    color: white;
+    border-color: blue;
+    color: white;
+    text-decoration: none;
+    
+}
+
+
+.buttonlink.ml-3 {
+    margin: 10px;
+}
 
 .cardcontainer {
 margin: auto;
@@ -875,6 +997,32 @@ margin: auto;
     height: 100%;
     width: 80%;
 }
+
+/******/
+
+/****************new block design*****************/
+
+
+.card-body {
+    padding: 0;
+}
+
+.rowportfolio {
+        position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+.rowcategories {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+
 
 .cardpost {
     background-size: cover;
@@ -888,24 +1036,303 @@ margin: auto;
     grid-row-end: 1;
 }
 
-.blog-grid-item .card-title {
+
+
+.blog-grid-item .cardtitle a {
+ border-bottom: 0px solid transparent;
+}
+
+
+.blog-grid-item .cardtitle a:hover {
+border-bottom: 1px solid #fff;
+text-decoration: none;
+-webkit-transition: .3s;
+transition: all 0.3s;
+}
+
+.blog-grid-item .cardsub {
+    font-weight: 400;
+    font-size: 12px;
+    margin-top: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 5px;
+    text-align: left;
+}
+
+
+.blog-grid-item .cardtitle {
     font-weight: 700;
     font-size: 30px;
     line-height: 1.1;
 }
 
 
+@media screen and (max-width: 767px) {
+
+
+.blog-grid-item .cardtitle {
+    font-size: 28px; 
+}
+
+}
+
+
+@media screen and (max-width: 600px) {
+
+
+.blog-grid-item .cardtitle {
+    font-size: 25px; 
+}
+
+}
+
+
 /*********responsive blocs under carousel********/
 
-@media screen and (min-width: 1024px) {
+
+@media screen and (min-width: 1300px) {
   .blog-grid-item {
-    height: 40vh;
+    height: 350px;
 }
 }
 
-@media screen and (min-width: 1200px) {
-  .blog-grid-item {
-    height: 45vh;
+
+@media screen and (max-width: 767px) {
+    .rowcategories {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
+    flex-direction: row;
+    align-content: center;
+    margin-top: 20px;
 }
+}
+
+
+
+/***************carousel categories tags css***************/
+
+
+.carouseltags {
+    color: white;
+    background-color: blue;
+    padding: 6px;
+    width: fit-content;
+    align-items: center;
+    vertical-align: middle;
+    display: inline-block;
+    margin-right: 5px;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    line-height: 1;
+}
+
+
+
+
+/*******footer*********/
+
+.footerwrapper {
+    width: 100%;
+    background-color: grey;
+    
+}
+
+.newsletter form {
+    margin-top: 0;
+}
+
+.footerform {
+    margin: auto 0;
+}
+
+.footertext {
+    font-size: 40px;
+    text-align: left;
+    color: white;
+    line-height: 1.2;
+    margin-bottom : 5px;
+}
+
+@media screen and (max-width: 991px) {
+    .footertext {
+    margin-bottom : 30px;
+    font-size: 28px;
+    text-align: center;
+
+}
+}
+
+
+
+
+/********portfolio**********/
+
+
+
+
+@media (min-width: 768px) {
+    .containerlarge {
+        max-width: 80%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .containerlarge {
+        width: 90%;
+        max-width:90%;
+    
+    }
+}
+
+
+.containerlarge {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px;
+}
+
+
+@media (min-width: 1300px) {
+    .containerlarge {
+        max-width: 1100px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .containerlarge {
+        max-width: 75%; /*1200*/
+    }
+}
+
+
+
+
+.blog-grid-item .cardtitlefull {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 1.1;
+}
+
+
+@media screen and (max-width:600px){
+.blocworks {
+    height: 270px;
+}
+}
+
+@media screen and (max-width: 1440px) {
+
+
+.blog-grid-item .cardtitlefull {
+    font-size: 25px; 
+}
+
+}
+
+
+.blog-grid-item .cardtitlefull a {
+ border-bottom: 0px solid transparent;
+}
+
+
+.blog-grid-item .cardtitlefull a:hover {
+border-bottom: 1px solid #fff;
+text-decoration: none;
+-webkit-transition: .3s;
+transition: all 0.3s;
+}
+
+
+
+/*************title page*************************/
+
+.containertitlepage {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.titlepage {
+    font-size: 60px;
+}
+
+.subtitlepage {
+    font-size: 20px;
+}
+
+@media screen and (max-width:767px) {
+    .titlepage {
+    font-size: 35px;
+}
+
+.subtitlepage {
+    font-size: 18px;
+}
+}
+
+
+
+.rowcategories-filter {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: fit-content;
+    margin: 50px auto;
+}
+
+@media screen and (max-width: 767px) {
+.rowcategories-filter {
+display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
+    flex-direction: row;
+    align-content: center;
+    margin: 15px auto;
+}
+}
+
+/****************button filter portfolio*******************/
+
+
+.buttonfilter {
+background-color: transparent;
+    border-color: blue;
+    color: blue;
+    padding: 8px 12px;
+    border: 2px solid;
+    width: fit-content;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    line-height: 1;
+    transition: 0.3s;
+    margin: 10px;
+}
+
+.buttonfilter:hover {
+
+     background-color: blue;
+    color: white;
+    border-color: blue;
+    text-decoration: none;   
+}
+
+
+.buttonfilter:focus {
+    background-color: #8282f9;
+    color: white;
+    border-color: blue;
+    text-decoration: none;
+    transition: all 0.3s;
+    outline: none;
 }
 

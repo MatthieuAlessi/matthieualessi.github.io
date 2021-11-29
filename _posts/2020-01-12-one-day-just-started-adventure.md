@@ -1,7 +1,8 @@
 ---
 layout: post
-title:  "One day we just started our adventure"
-author: sal
+title:  "One day we just"
+subtitle: "The Sahara is a desert located on the African continent."
+
 categories: [ Travel, Lifestyle ]
 tags: [ France, test ]
 image: assets/images/15.jpg

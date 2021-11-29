@@ -1,33 +1,43 @@
-{% assign author = site.authors[post.author] %}
+
+{% assign sorted-posts = site.posts | where: "tags","test" %}
+{% for post in sorted-posts limit: 4 %}
 
 <div class="blog-grid-item">
-    <div class="card cardpost h-100 w-100" style="background-image: url('{{ site.baseurl }}/{{ post.image }}');">
+    <div class="card cardpost h-100 w-100" style="background-image: url('{% if post.image contains "://" %}{{ post.image }}{% else %}{{ site.baseurl }}/{{ post.image }}{% endif %}');">
         <div class="cardcontainer">
-            <div class="maxthumb">
+<div class="maxthumb">
 
-{% if post.image %}
-            <a href="{{ site.baseurl }}{{ post.url }}">
- {% endif %}
-    
+
+            
         <div class="card-body">
             <div class="carouseltags-container">
               <p class="carouseltags">{{ post.tags | first }}</p>
               <p class="carouseltags">{{ post.tags | last }}</p>
             </div>
-            <h2 class="card-title">
+
+    
+
+            <h2 class="cardtitle">
                 <a class="text-white" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-                <div class="mb-2 mt-2 font-weight-normal">
-                </div>
-            </h2>
-            <!--h4 class="card-text">{{ post.excerpt | strip_html | truncatewords:8 }}</h4-->
-        </div>
-    </div>
                 
+            </h2>
 
-            </a>
+            <p class="cardsub text-white">{{ post.subtitle }}</p>
+
+            
         </div>
- 
+
+    
+
+</div>
+            
+
+        </div>
+
                 <div class="clearfix"></div>
-            </div>
-        </div>
+        
+    </div>
+</div>
+ {% endfor %}
 
+ 

@@ -1,7 +1,8 @@
 ---
 layout: post
-title:  "Test"
-author: sal
+title:  "les ambassadeurs"
+subtitle: "The Sahara is a desert located on the African continent."
+
 categories: [ Lifestyle ]
 tags: [ France, test ]
 image: assets/images/2.jpg
