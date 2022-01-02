@@ -1,5 +1,5 @@
 # General Site Settings
 
 menu:
-- {name: About, link: 'aboutme'}
-- {name: Portfolio, link: 'works'}
+- {name: About, link: '{{ site.baseurl }}/about/'}
+- {name: Portfolio, link: '{{ site.baseurl }}/portfolio/'}
