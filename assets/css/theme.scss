@@ -25,7 +25,7 @@ $enable-rounded: false;
 
 @font-face {
     font-family: 'Gilmer Heavy';
-    src: url("/portfolio2/assets/fonts/Gilmer Heavy.otf") format("opentype");
+    src: url("/assets/fonts/Gilmer Heavy.otf") format("opentype");
 }
 
 
@@ -1408,13 +1408,13 @@ margin-bottom: 20px;
 
 
 .containerpadpost {
-    padding-top: 10px;
+    padding-top: 30px;
 }
 
 
 @media screen and (min-width: 768px) {
     .containerpadpost {
-    padding-top: 45px;
+    padding-top: 50px;
 }
 }
 
@@ -1444,7 +1444,7 @@ margin: auto;
 
 .headerwrapper {
     width: 100%;
-    background-image: url(/portfolio2/assets/images/headerimg.jpg);
+    background-image: url(/assets/images/headerimg.jpg);
     background-size: contain;
     background-position: top right;
     background-repeat: no-repeat;
@@ -1452,7 +1452,7 @@ margin: auto;
     margin-top: 0;
     display: table;
     min-height: 600px;
-    margin-bottom: 40px;
+    margin-bottom: 60px;
     position: relative;
 }
 
@@ -1501,7 +1501,7 @@ padding-bottom: 10px;
 
 .headerwrapper {
     width: 100%;
-    background-image: url(/portfolio2/assets/images/headerimg.jpg);
+    background-image: url(/assets/images/headerimg.jpg);
     margin-bottom: 0px;
     background-size: cover;
     background-position: bottom right -54vw;
@@ -1551,7 +1551,7 @@ padding-bottom: 10px;
 
 .headerwrapper {
 width: 100%;
-    background-image: url(/portfolio2/assets/images/headerimg.jpg);
+    background-image: url(/assets/images/headerimg.jpg);
     margin-bottom: 0px;
     background-size: contain;
     background-position: center right;
@@ -1614,7 +1614,7 @@ width: 65%;
 
 .headerwrapper {
     width: 100%;
-    background-image: url(/portfolio2/assets/images/headerimg.jpg);
+    background-image: url(/assets/images/headerimg.jpg);
     margin-bottom: 0px;
     background-size: contain;
     background-position: bottom right;
@@ -1668,7 +1668,7 @@ padding-bottom: 20px;
 
 .headerwrapper {
     width: 100%;
-    background-image: url(/portfolio2/assets/images/headerimg.jpg);
+    background-image: url(/assets/images/headerimg.jpg);
     margin-bottom: 0px;
     background-size: 48%;
     background-position: bottom right;
@@ -2214,6 +2214,16 @@ display: flex;
 /**************post page layout*************/
 
 .portfolio-col-img {
+    width: 100%;
+    padding: 0;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 35px;
+}
+
+@media screen and (min-width: 768px) {
+
+.portfolio-col-img {
     width: 50%;
     float: left;
     padding: 0;
@@ -2222,6 +2232,7 @@ display: flex;
     margin-bottom: 35px;
 }
 
+}
 /***text***/
 
 
@@ -2347,7 +2358,7 @@ img.featured-image {
 .footerbot {
     padding: 9% 70px;
     margin: auto;
-    background-image: url('/portfolio2/assets/images/headerbg1.jpg');
+    background-image: url('/assets/images/headerbg1.jpg');
         background-size: cover;
     background-position-y: 80%;
     box-shadow: inset 0 0 0 1000px rgba(0,0,0,.2);
