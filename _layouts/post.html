@@ -5,20 +5,20 @@ archive: false
 post_class: post-template
 ---
 
-<div class="entry-header">
+<div class="container containerpadpost">
     <!-- Post Title -->
-    <div class="carouseltags-container">
+    <div class="tagscontainer d-flex d-xl-block justify-content-center">
 
-              <p class="carouseltags">{{ page.tags | first }}</p>
-              <p class="carouseltags">{{ page.tags | last }}</p>
+              <p class="tags">{{ page.tags | first }}</p>
+              <p class="tags">{{ page.tags | last }}</p>
     </div>
 
 <div class="postcontainer">
-    <h1 class="posttitle">{{ page.title }}</h1>
-    <p class="cardsub text-dark">{{ page.subtitle }}</p>
+    <h1 class="post-title">{{ page.title }}</h1>
+    <p class="whitetext uppercasefont post-subtitle">{{ page.subtitle }}</p>
 </div>
 
-    <!-- Author & Date  Box -->
+    <!-- Author & Date  Box 
     {% assign author = site.authors[page.author] %}
     {% if page.author %}
     <div class="d-flex align-items-center mt-4">
@@ -39,6 +39,7 @@ post_class: post-template
     </div>
     {% endif %}
 </div>
+-->
 
 <!-- Adsense under title if enabled from _config.yml (change your pub id and slot) -->
 {% if site.adsense == "enabled" %}

@@ -14,6 +14,8 @@
 
 <link href="{{ site.baseurl }}/assets/css/theme.css" rel="stylesheet">
 
+<link href="{{ site.baseurl }}/assets/themify-icons/themify-icons.css" rel="stylesheet">
+
 <script src="{{ site.baseurl }}/assets/js/jquery.min.js"></script>
 
 </head>
@@ -53,10 +55,9 @@
     <ul>
         <h3>Navigation</h3>
         <li><a href="{{ site.baseurl }}/">Home</a></li>
-        <li><a href="{{ site.baseurl }}/about">About</a></li>
-        <li><a href="{{ site.baseurl }}/authors">Contributors <span class="badge badge-primary">new</span></a></li>
-        <li><a target="_blank" href="https://bootstrapstarter.com/jekyll-theme-memoirs/">Get Memoirs</a></li>      
-        <li><a href="{{ site.baseurl }}/contact">Contact</a></li>       
+        {% for link in site.data.settings.menu %}
+        <li><a href="{{ link.link }}">{{ link.name }}</a></li>
+        {% endfor %}      
     </ul>   
 </nav>
 
@@ -69,10 +70,16 @@
 <div class="site-content {% if page.url == '/' %} firstpage {% endif %}">
 
   {% if page.url == '/' %}
+    
     <div class="headerwrapper">
-        <div class="header">
-            <h1 class="sitetag whitetext title">{{ site.title }}</h1>
-            <p class="whitetext subtitle">{{ site.description }}</p>
+        <div class="alignvertical">
+        <div class="hero containerhero">
+            
+            <h1 class="herotext uppercasefont uppercasefontheader highlight">Matthieu Alessi</h1>
+            <p class="whitetext herotext title titleheader">Hello & welcome to my portfolio</p>
+            <p class="subtitle herotext">I use Graphic Design, UI Design and Illustration as complementary practices in my projects. I invite you to browse my portfolio to learn more about me and my work.</p>
+            <div class="buttonlink herotext"><a href="/aboutme/">About me</a></div>
+        </div>
         </div>
     </div>
     {% endif %}
@@ -93,6 +100,7 @@
 
     <!-- Content
     ================================================== -->
+ 
     <div class="main-content">
         {{ content }}
     </div>
@@ -114,39 +122,61 @@
 </div-->
 
 
-    <div class="footerwrapper">
-        <div class="header">
+    <div class="container">
+        <div class="footerbot">
 
   <div class="newsletter text-center row">
         <div class="col-lg-6">
-            <p class="sitetag whitetext footertext">Never miss a <b>story</b> from us, subscribe to our newsletter</p>
+            <p class="whitetext footertext">You can easily get in touch by mail on this address.</p>
         </div>
 
         <div class="col-lg-6 footerform">
-            <form action="{{site.mailchimp-list}}" method="post" name="mc-embedded-subscribe-form" class="wj-contact-form validate" target="_blank" novalidate>
+            
             <div class="mc-field-group d-inline-flex">
-            <input type="email" placeholder="Your e-mail" name="EMAIL" class="required email" id="mce-EMAIL" autocomplete="on" required>
-            <input type="submit" value="Subscribe" name="subscribe" class="heart">
+ <div class="copytextdiv"><input value="matthieu.alessi@gmail.com" class="copytext">
+             
+            </input></div>
+
+            <button class="buttoncopy">Copy</button><span class="tooltip">Copied</span>
+         
             </div>
-        </form>
+        
         </div>
 
     </div>
     
     
+    </div>
 </div>
-</div>
+ 
+<script>
+const text = document.querySelector(".copytext");
+const btn = document.querySelector(".buttoncopy");
+
+btn.addEventListener("click", () =>{
+  text.select();
+  text.setSelectionRange(0, 10000);
+  document.execCommand("copy");
+  btn.classList.toggle("copied");
+  btn.innerHTML = "Copied!";
+
+  setTimeout(function(){
+    btn.classList.toggle("copied");
+    btn.innerHTML = "Copy";
+  }, 3000);
+});
+      </script>
 
 <!-- Begin Footer
 ================================================== -->
 <footer class="footer">
     <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-sm-12 text-center text-lg-left">
-                Copyright © {{ site.time | date: "%Y" }} {{ site.name }} 
+        <div class="row flex-column align-content-center">
+            <div class="col-md-6 col-sm-12 text-center">
+                <p class="copyright">Copyright © {{ site.time | date: "%Y" }} {{ site.name }}</p> 
             </div>
-            <div class="col-md-6 col-sm-12 text-center text-lg-right">    
-                <a target="_blank" href="https://www.wowthemes.net/memoirs-free-jekyll-theme/">Memoirs Jekyll Theme</a> by WowThemes.net
+            <div class="col-md-6 col-sm-12 text-center">    
+                <p class="copyright">Memoirs Jekyll Theme by WowThemes.net</p>
             </div>
         </div>
     </div>

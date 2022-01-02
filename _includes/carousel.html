@@ -4,12 +4,12 @@
 
 <div class="carousel__holder">
     <div class="carousel">
-        {% for post in site.tags.test %}
+        {% for post in site.tags.carousel %}
     
           <input class="carousel__activator" type="radio" name="carousel" id="{{ letters[forloop.index0] }}" {% if forloop.first %}checked="checked"{% endif %} />
         
 {% endfor %}
-        {% for post in site.tags.test %}
+        {% for post in site.tags.carousel %}
     
           {% if forloop.index == forloop.length %}
             {% assign nextindex = 0 %}
@@ -31,17 +31,17 @@
 {% endfor %}
         <div class="carousel__track">
           <ul>
-            {% for post in site.tags.test %}
+            {% for post in site.tags.carousel %}
     
             <li class="carousel__slide" style="background-image: url('{{ site.baseurl }}/{{ post.image }}');">
             <div class="carouselcontain">
-              <div class="carouseltags-container">
+              <div class="tags-container">
                 
-              <p class="carouseltags">{{ post.tags | first }}</p>
-              <p class="carouseltags">{{ post.tags | last }}</p>
+              <p class="tags">{{ post.tags | first }}</p>
+              <p class="tags">{{ post.tags | last }}</p>
             </div>
-            <h2 class="carouseltext"><a href="{{ post.url }}">{{ post.title }}</a></h2>
-            <p class="carouselsub text-white">{{ post.subtitle }}</p>
+            <h3 class="whitetext bloctitle carouseltitle"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
+            <p class="whitetext uppercasefont blocsub">{{ post.subtitle }}</p>
           </div>
           </li>
              
@@ -49,7 +49,7 @@
           </ul>
         </div>
         <div class="carousel__indicators">
-            {% for post in site.tags.test %}
+            {% for post in site.tags.carousel %}
     
               <label class="carousel__indicator" for="{{ letters[forloop.index0] }}"></label>
             
@@ -74,31 +74,28 @@ text-align-last: left;
   }
 
 
-.carouseltext {
-color: white;
-font-size: 60px;
+.bloctitle {
 line-height: 1.1;
-font-weight: bold;
 text-align: left;
 align-items: center;
 vertical-align: middle;
 }
 
-.carouseltext a {
+.bloctitle a {
 border-bottom: 0px solid transparent;
 color: white;
 }
 
-.carouseltext a:hover {
+.bloctitle a:hover {
 border-bottom: 1px solid #fff;
 text-decoration: none;
 -webkit-transition: .3s;
 transition: all 0.3s;
 }
 
-.carouseltags {
-    color: white;
-    background-color: blue;
+.tags {
+    color: $buttontext;
+    background-color: $highlight;
     padding: 6px;
     width: fit-content;
     align-items: center;
@@ -110,17 +107,16 @@ transition: all 0.3s;
     font-weight: bold;
     letter-spacing: 1px;
     line-height: 1;
+    font-family: 'sen';
 }
 
 
-.carouselsub {
-    font-weight: 400;
+.blocsub {
     font-size: 12px;
+    margin-bottom: 0;
     margin-top: 0;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-top: 5px;
     text-align: left;
+    font-family: 'sen';
 }
 
 .carousel__holder {width: 100%; position: relative; padding-bottom: {{ include.height }}{{ include.unit }}; margin: 1rem 0 1rem;}
@@ -270,25 +266,6 @@ transition: all 0.3s;
 
 
 
-
-@media screen and (max-width: 1439px) {
-
-.carouseltext {
-    font-size: 52px; 
-}
-}
-
-
-@media screen and (max-width: 1199px) {
-
-.carouseltext {
-    font-size: 43px; 
-}
-
-}
-
-
-
 @media screen and (max-width: 1023px){
 
 .carousel__holder {
@@ -298,12 +275,6 @@ transition: all 0.3s;
 .carouselcontain {
     width: 70%;
   }
-
-.carouseltext {
-    font-size: 40px; 
-}
-}
-
 
 
 @media screen and (max-width: 767px) {
@@ -340,32 +311,12 @@ transition: all 0.3s;
 
 }
 
-.carouseltext {
-    font-size: 40px; 
+
+@media screen and (min-width: 992px){
+  .carouseltitle {
+    font-size: 2.441rem;
+  }
 }
-
-
-}
-
-
-@media screen and (max-width: 600px) {
-
-
-.carouseltext {
-    font-size: 35px; 
-}
-
-
-@media screen and (max-width: 480px) {
-
-
-.carouseltext {
-    font-size: 25px; 
-}
-
-}
-
-
 
 
 

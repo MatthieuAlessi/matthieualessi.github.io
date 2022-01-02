@@ -16,9 +16,7 @@
 </script>
 
 <div class="rowcategories-filter">
-<button class="buttonfilter" id="All" onclick="filterUsingCategory('All')">
-  *Show All Posts*
-</button>
+<button class="buttonfilter" id="All" onclick="filterUsingCategory('All')">All</button>
 {% assign categories = site.categories | sort %}
 {% for category in categories %}
   {% assign cat = category | first %}
@@ -34,23 +32,23 @@
   {% assign id = id | plus:1 %}
 <div class="blog-grid-item blocworks" id="{{id}}">
 
-    <div class="card cardpost h-100 w-100" style="background-image: url('{% if post.image contains "://" %}{{ post.image }}{% else %}{{ site.baseurl }}/{{ post.image }}{% endif %}');">
+    <div class="card cardpost h-100 w-100" style="background-image: url('{% if post.item contains "://" %}{{ post.item}}{% else %}{{ site.baseurl }}/{{ post.item }}{% endif %}');">
 
         <div class="cardcontainer">
 
 <div class="maxthumb">
 
-            <div class="carouseltagsfade">
-              <p class="carouseltags">{{ post.tags | first }}</p>
-              <p class="carouseltags">{{ post.tags | last }}</p>
+            <div class="tagscontainer">
+              <p class="tags">{{ post.tags | first }}</p>
+              <p class="tags">{{ post.tags | last }}</p>
             </div>
 
 
-            <h2 class="cardtitlefull">
-                <a class="text-white" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-            </h2>
+            <h3 class="whitetext bloctitle">
+                <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+            </h3>
 
-            <p class="cardsub text-white">{{ post.subtitle }}</p>
+            <p class="whitetext uppercasefont blocsub">{{ post.subtitle }}</p>
 
 
 </div>

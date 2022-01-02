@@ -1,28 +1,28 @@
 
-{% assign sorted-posts = site.posts | where: "tags","test" %}
+{% assign sorted-posts = site.posts | where: "tags","home" %}
 {% for post in sorted-posts limit: 4 %}
 
 <div class="blog-grid-item">
-    <div class="card cardpost h-100 w-100" style="background-image: url('{% if post.image contains "://" %}{{ post.image }}{% else %}{{ site.baseurl }}/{{ post.image }}{% endif %}');">
+    <div class="card cardpost h-100 w-100" style="background-image: url('{% if post.item contains "://" %}{{ post.item }}{% else %}{{ site.baseurl }}/{{ post.item }}{% endif %}');">
         <div class="cardcontainer">
 <div class="maxthumb">
 
 
             
         <div class="card-body">
-            <div class="carouseltags-container">
-              <p class="carouseltags">{{ post.tags | first }}</p>
-              <p class="carouseltags">{{ post.tags | last }}</p>
+            <div class="tagscontainer">
+              <p class="tags">{{ post.tags | first }}</p>
+              <p class="tags">{{ post.tags | last }}</p>
             </div>
 
     
 
-            <h2 class="cardtitle">
-                <a class="text-white" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+            <h3 class="whitetext bloctitle">
+                <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
                 
-            </h2>
+            </h3>
 
-            <p class="cardsub text-white">{{ post.subtitle }}</p>
+            <p class="whitetext uppercasefont blocsub">{{ post.subtitle }}</p>
 
             
         </div>
