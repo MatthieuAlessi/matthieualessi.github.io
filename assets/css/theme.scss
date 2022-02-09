@@ -1142,7 +1142,8 @@ margin-right: 30px;
 padding:0;
 }
 
-.rowcontact {
+
+contact {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -2191,7 +2192,7 @@ max-width: 40%;
 .rowcategories-filter {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
     flex-wrap: wrap;
     width: fit-content;
     margin: 50px auto;
